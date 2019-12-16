@@ -27,8 +27,9 @@ function give_display_tshirt()
     <script>
         //Grabbing the custom field
         const y = document.querySelector("#tshirt_size-wrap");
+        const donLevels = document.querySelectorAll('.give-donation-level-btn');
+        //Hides and shows the t-shirt field
 
-        //Hides and shows the t-shirt feild
         function giveToggleShirt() {
             // Grabbing donation amount
             const donValue = document.querySelector("#give-amount").value;
@@ -67,32 +68,38 @@ function give_display_tshirt()
             };
         }
 
-        // Grab all the donation level buttons
-        document.querySelectorAll('.give-donation-level-btn').forEach(item => {
-            // Running the loop on the Donation Buttons
-            item.addEventListener('click', event => {
+        if (donLevels != null) {
+            // Grab all the donation level buttons
+            document.querySelectorAll('.give-donation-level-btn').forEach(item => {
+                // Running the loop on the Donation Buttons
+                item.addEventListener('click', event => {
 
-                // Set timeout for amount to populate
-                setTimeout(function() {
-                    // Run the t-shirt function
-                    giveToggleShirt();
+                    // Set timeout for amount to populate
+                    setTimeout(function() {
+                        // Run the t-shirt function
+                        giveToggleShirt();
 
-                }, 500);
+                    }, 500);
 
+                })
             })
-        })
+        }
 
-        // Grabbing the recurring selection wrap
-        const recurWrap = document.querySelector(".give-recurring-donors-choice");
-        recurWrap.addEventListener('click', event => {
+        if (donLevels != null) {
+            // Grabbing the recurring selection wrap
+            const recurWrap = document.querySelector(".give-recurring-donors-choice");
+            if (recurWrap != null) {
+                recurWrap.addEventListener('click', event => {
 
-            setTimeout(function() {
-                // Run the t-shirt function
-                giveToggleShirt();
+                    setTimeout(function() {
+                        // Run the t-shirt function
+                        giveToggleShirt();
 
-            }, 500);
+                    }, 500);
 
-        })
+                })
+            }
+        }
     </script>
 <?php }
 
