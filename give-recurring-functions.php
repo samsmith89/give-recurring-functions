@@ -28,6 +28,7 @@ function give_display_tshirt()
         //Grabbing the custom field
         const y = document.querySelector("#tshirt_size-wrap");
         const donLevels = document.querySelectorAll('.give-donation-level-btn');
+        const recurWrap = document.querySelector(".give-recurring-donors-choice");
         //Hides and shows the t-shirt field
 
         function giveToggleShirt() {
@@ -35,6 +36,7 @@ function give_display_tshirt()
             const donValue = document.querySelector("#give-amount").value;
             // Is Recurring checked
             const donRecur = document.querySelector("#_give_is_donation_recurring").value;
+
 
             // Conditionals on donation amount and if recurring is checked
             if ((donValue == 240.00) && (donRecur == 0)) {
@@ -68,7 +70,7 @@ function give_display_tshirt()
             };
         }
 
-        if (donLevels != null) {
+        if ((donLevels != null) && (y != null)) {
             // Grab all the donation level buttons
             document.querySelectorAll('.give-donation-level-btn').forEach(item => {
                 // Running the loop on the Donation Buttons
@@ -85,9 +87,9 @@ function give_display_tshirt()
             })
         }
 
-        if (donLevels != null) {
+        if ((donLevels != null) && (y != null)) {
             // Grabbing the recurring selection wrap
-            const recurWrap = document.querySelector(".give-recurring-donors-choice");
+
             if (recurWrap != null) {
                 recurWrap.addEventListener('click', event => {
 
