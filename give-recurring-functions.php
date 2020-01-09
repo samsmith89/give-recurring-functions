@@ -29,17 +29,19 @@ function give_display_tshirt()
         const y = document.querySelector("#tshirt_size-wrap");
         const donLevels = document.querySelectorAll('.give-donation-level-btn');
         const recurWrap = document.querySelector(".give-recurring-donors-choice");
+        const donTotal = document.querySelector("#give-amount");
         //Hides and shows the t-shirt field
 
         function giveToggleShirt() {
             // Grabbing donation amount
-            const donValue = document.querySelector("#give-amount").value;
+            const donRawValue = document.querySelector("#give-amount").value;
+            const donValue = parseFloat(donRawValue.replace(/,/g, ''));
             // Is Recurring checked
             const donRecur = document.querySelector("#_give_is_donation_recurring").value;
 
 
             // Conditionals on donation amount and if recurring is checked
-            if ((donValue == 240.00) && (donRecur == 0)) {
+            if ((donValue >= 240.00) && (donRecur == 0)) {
 
                 // Conditional to see the display state of the Tshirt field
                 function toggleShirt() {
@@ -51,7 +53,7 @@ function give_display_tshirt()
                 };
                 toggleShirt();
 
-            } else if ((donValue == 20.00) && (donRecur == 1)) {
+            } else if ((donValue >= 20.00) && (donRecur == 1)) {
 
                 function toggleShirt() {
 
@@ -96,6 +98,25 @@ function give_display_tshirt()
                     setTimeout(function() {
                         // Run the t-shirt function
                         giveToggleShirt();
+
+                    }, 500);
+
+                })
+            }
+        }
+
+
+
+        if ((donLevels != null) && (y != null)) {
+            // Grabbing the recurring selection wrap
+
+            if (donTotal != null) {
+                donTotal.addEventListener('blur', event => {
+
+                    setTimeout(function() {
+                        // Run the t-shirt function
+                        giveToggleShirt();
+
 
                     }, 500);
 
