@@ -20,7 +20,7 @@
  */
 
 
-// DRY on this one
+//
 // Displays custom tshirt field if the donation amount is $240 one-time or $20 monthly
 function give_display_tshirt()
 { ?>
