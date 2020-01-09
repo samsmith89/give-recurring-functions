@@ -105,10 +105,8 @@ function give_display_tshirt()
             }
         }
 
-
-
         if ((donLevels != null) && (y != null)) {
-            // Grabbing the recurring selection wrap
+            // Fires when the Give total loses focus
 
             if (donTotal != null) {
                 donTotal.addEventListener('blur', event => {
