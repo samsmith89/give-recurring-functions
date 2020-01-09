@@ -14,14 +14,12 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * DISCLAIMER: This is provided as a solution for providing additional functionality to the Give Recurring plugin with the current markup and version of the Give plugin (version 2.5.10) and Give Recurring addon (version 1.9.7). We provide no
+ * DISCLAIMER: This is provided as a solution for providing additional functionality to the Give Recurring plugin with the current markup and version of the Give plugin (version 2.5.12) and Give Recurring addon (version 1.9.8). We provide no
  * guarantees to any updates that Give may make to their plugin and we do not offer Support for this code at all. For more information please reference the custom development agreement that was agreed to and signed by both parties.
  *
  */
 
-
-//
-// Displays custom tshirt field if the donation amount is $240 one-time or $20 monthly
+// Displays custom tshirt field if the donation amount is above $240 one-time or $20 monthly.
 function give_display_tshirt()
 { ?>
     <script>
